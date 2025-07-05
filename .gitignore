@@ -1,0 +1,14 @@
+# Node
+server/node_modules
+server/.env
+
+# Python
+sentiment-service/venv
+
+# React
+client/node_modules
+client/.env
+
+# System files
+.DS_Store
+Thumbs.db

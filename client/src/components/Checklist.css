@@ -1,0 +1,169 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cormorant Upright', serif;
+  background: linear-gradient(to right, #e8fdfd, #dff6ff);
+  overflow-x: hidden;
+}
+
+/* Main wrapper */
+.sea-checklist-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* 🖼 Pond image as background element */
+.pond-art {
+  width: 100vh;
+  height: 400px;
+  background: url('../../public//assets/pondcat.jpg') no-repeat center/cover;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: floatImage 3s ease-in-out infinite alternate;
+}
+
+/*  Bubble list area */
+.bubble-area {
+  flex: 1;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.bubble-heading {
+  text-transform: lowercase;
+  font-size: 2rem;
+  color: #01363f;
+  margin-bottom: 1.5rem;
+}
+
+/* Bubbles */
+.bubble-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.bubble {
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, #f1faff, #d0f2ff);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 150, 255, 0.2);
+  animation: floatBubble 6s ease-in-out infinite;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.bubble:hover {
+  transform: scale(1.05);
+}
+
+.bubble span {
+  font-size: 1rem;
+  color: #004d40;
+  padding: 0.4rem;
+  text-align: center;
+}
+
+.bubble span.done {
+  text-decoration: line-through;
+  color: #2e7d32;
+}
+
+.bubble-delete {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ef5350;
+  border: none;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+/* Bottom input bar */
+.anchored-input-bar {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(4px);
+  padding: 0.6rem 1rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.anchored-input-bar input {
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  outline: none;
+  min-width: 200px;
+}
+
+.anchored-input-bar button {
+  background: #00acc1;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/*  Animations */
+@keyframes floatImage {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(12px); }
+}
+
+@keyframes floatBubble {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sea-checklist-wrapper {
+    flex-direction: column;
+    padding-bottom: 6rem;
+  }
+
+  .pond-art {
+    width: 90%;
+    height: 220px;
+    margin-bottom: 2rem;
+  }
+
+  .bubble {
+    width: 80px;
+    height: 80px;
+  }
+
+  .input-floating-bar {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .input-floating-bar input,
+  .input-floating-bar button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.landing-container {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #5c67f2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
