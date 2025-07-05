@@ -22,7 +22,7 @@ exports.register = async (req, res) => {
     }
 
     const trimmedPassword = password.trim();
-    console.log('🔐 Registration Password:', trimmedPassword);
+   
 
     // Let schema handle hashing via pre-save hook
     const user = await User.create({ username, email, password: trimmedPassword });
