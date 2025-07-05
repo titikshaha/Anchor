@@ -27,7 +27,7 @@ exports.register = async (req, res) => {
     // Let schema handle hashing via pre-save hook
     const user = await User.create({ username, email, password: trimmedPassword });
 
-    console.log('✅ User registered:', user);
+    //console.log('✅ User registered:', user);
 
     const token = createToken(user);
     return res.status(201).json({ token, user: { id: user._id, username, email } });
@@ -44,8 +44,7 @@ exports.login = async (req, res) => {
     const { email, password } = req.body;
     const trimmedPassword = password.trim();
 
-    console.log('🔑 Login Email:', email);
-    console.log('🔑 Login Password:', trimmedPassword);
+    
 
     const user = await User.findOne({ email });
     if (!user) {
@@ -53,11 +52,10 @@ exports.login = async (req, res) => {
       return res.status(400).json({ message: 'Invalid email' });
     }
 
-    console.log('📦 Found User:', user);
-    console.log('📦 Stored Hashed Password:', user.password);
+    
 
     const isMatch = await bcrypt.compare(trimmedPassword, user.password);
-    console.log('🔍 Password Match:', isMatch);
+    
 
     if (!isMatch) return res.status(400).json({ message: 'Invalid password' });
 

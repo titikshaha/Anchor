@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./MoodRecommender.css"; // Make sure to create and import this CSS
+import "./MoodRecommender.css"; 
 import "./MoodForm";
 const MoodRecommender = ({ mood }) => {
   const [songs, setSongs] = useState([]);

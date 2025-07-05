@@ -15,7 +15,7 @@ function pickRandom(arr, n) {
 
 router.get("/recommendations/:mood", async (req, res) => {
   const mood = req.params.mood.toLowerCase();
-  console.log("🔍 Mood received:", mood);
+  //console.log("🔍 Mood received:", mood);
 
   try {
     await authenticate();

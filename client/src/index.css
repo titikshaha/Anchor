@@ -1,5 +1,6 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Sea+Salt&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
 body {
   margin: 0;
    scroll-behavior: smooth;
@@ -438,5 +439,75 @@ footer {
   .footer-social img {
     width: 24px;
     height: 24px;
+  }
+}
+/* 🧾 Journal Paper Styling */
+.journal-paper {
+  background: url('../public/assets/journalpage.jpg') no-repeat center center;
+  background-size: cover;
+  background-size: contain; /* Ensures full image fits without cropping */
+  width: 90vw;
+  max-width: 1000px;  /* or 80% of screen width if you want */
+  aspect-ratio: 1.4 / 1;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   position: relative;
+}
+
+/* ✍️ Journal Textarea */
+.journal-textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: transparent;
+  resize: none;
+  outline: none;
+  color: #333;
+  font-size: 1.05rem;
+  font-family: 'Homemade Apple', cursive;
+  line-height: 2;
+  padding: 0;
+  overflow-y: auto;
+  cursor: url('../public/assets/cursor.png'), auto;
+  z-index: 2;
+}
+
+/* 🎯 Button Section */
+.journal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* 🧵 Buttons (General Styling — Font NOT changed here) */
+.journal-buttons button {
+  background-color: #00acc1;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 188, 212, 0.3);
+  transition: all 0.3s ease;
+}
+
+.journal-buttons button:hover {
+  transform: scale(1.05);
+  background-color: #00796b;
+}
+
+/* 📱 Responsive Fixes */
+@media (max-width: 768px) {
+  .journal-paper {
+    height: 80vh;
+    padding: 1.5rem;
+  }
+
+  .journal-textarea {
+    font-size: 0.95rem;
   }
 }

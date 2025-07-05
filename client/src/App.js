@@ -5,7 +5,7 @@ import MoodRecommender from './components/MoodRecommender';
 import Profile from "./Pages/Profile";
 import Landing from "./Pages/Landing";
 import Footer from "./components/Footer";
-
+import JournalView from "./components/JournalView";
 function App() {
   return (
     <Router>
@@ -15,6 +15,8 @@ function App() {
         <Route path="/journal" element={<Journal />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/recommendations" element={<MoodRecommender />} />
+        <Route path="/journal/view" element={<JournalView />} />
+
       </Routes>
       <Footer />
     </Router>

@@ -8,7 +8,6 @@ export default function Journal() {
   const [entryId, setEntryId] = useState(null);
   const [editable, setEditable] = useState(true);
 
-  // Fetch today's entry on load
   useEffect(() => {
     const fetchTodayEntry = async () => {
       try {
@@ -45,7 +44,7 @@ export default function Journal() {
   };
 
   return (
-    <div className="home-container">
+    <div className="home-container journal-page-wrapper">
       <nav className="navbar">
         <div
           className="logo"
@@ -66,23 +65,32 @@ export default function Journal() {
         </div>
       </nav>
 
-      <form onSubmit={handleSubmit} className="journal-form p-4 max-w-2xl mx-auto space-y-4">
-        <textarea
-          placeholder="Write your thoughts for the day..."
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          disabled={!editable}
-          maxLength={1000}
-          className="w-full p-4 border rounded resize-none min-h-[300px]"
-        />
-        {editable ? (
-          <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded">
-            {entryId ? "Update Entry" : "Save Entry"}
-          </button>
-        ) : (
-          <p className="text-gray-500 italic">This journal entry is now locked for today.</p>
-        )}
-      </form>
+    
+  <form onSubmit={handleSubmit} className="journal-form">
+    <div className="journal-paper">
+      <textarea
+        placeholder="Write your thoughts for the day..."
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+        disabled={!editable}
+        maxLength={1000}
+        className="journal-textarea"
+      />
     </div>
+
+    <div className="journal-buttons">
+      {editable ? (
+        <button type="submit">
+          {entryId ? "Update Entry" : "Save Entry"}
+        </button>
+      ) : (
+        <p>This journal entry is now locked for today.</p>
+      )}
+      <button type="button" onClick={() => navigate("/journal/view")}>
+        View Past Entries
+      </button>
+    </div>
+  </form>
+</div>
   );
 }

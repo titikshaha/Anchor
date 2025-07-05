@@ -17,7 +17,7 @@ app.use(cors({
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
-console.log('Connecting to:', process.env.MONGO_URI);
+//console.log('Connecting to:', process.env.MONGO_URI);
 
 const checklistRoutes = require('./routes/checklistRoutes');
 app.use('/api/checklist', checklistRoutes);
